@@ -59,7 +59,9 @@ Queue* queue_delete(Queue *q,Queue_Result *res)
 void queue_display(Queue *q)
 {
 	assert(q!=NULL);
-	int32_t i;	
-	for(i=q->head;i<= q->tail;i++)
-    printf("%d ", q->data[i]);
+	
+	while(q->head!=q->count){	
+    		printf("%d ", q->data[q->head]);
+    		++q->head;
+	}
 }
